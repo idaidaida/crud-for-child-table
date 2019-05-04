@@ -1,0 +1,19 @@
+.container
+    %h1 Edit account info
+    = form_for @account do |f|
+        .form-group
+            = f.label :name, "account name"
+            = f.text_field :name, {class:"form-control"}
+        = f.fields_for :profile do |profile_f|
+            .form-group
+                = profile_f.label :hobby, "hobby"
+                = profile_f.text_field :hobby, {class:"form-control"}
+            .form-group
+                = profile_f.label :birthplace, "birth place"
+                = profile_f.text_field :birthplace, {class:"form-control"}
+        .form-group
+            = f.submit "update", {class:"btn btn-primary"}
+        = link_to "back to prev page", root_path,{class:"btn btn-default"} 
+            
+              
+      

@@ -1,0 +1,26 @@
+.container.py-3
+    %h2 account list
+    %hr
+    .row
+        .col-3
+            .list-group
+                .list-group-item
+                    = link_to "add account", new_account_path
+        .col-9
+            - @accounts.each do |account|
+                %table.table.mb-2.border.shadow-sm
+                    %tbody
+                        %tr
+                            %td アカウント名
+                            %td #{account.name}
+                        %tr
+                            %td 趣味
+                            %td #{account.profile.hobby}
+                        %tr
+                            %td 出身地
+                            %td #{account.profile.birthplace}
+                        %tr
+                            %td 操作
+                            %td
+                                = link_to "Edit", edit_account_path(account),{class:"btn btn-primary"}
+                                = link_to "Delete", account_path(account),{class:"btn btn-danger",method: :delete}
