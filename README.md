@@ -1,24 +1,12 @@
-# README
+# 概要
+一つの小テーブルを持つ親テーブルがあるときに、親テーブルと小テーブルを同時に操作するサンプルコードを書いた。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 前提
+## テーブル構成
+### アカウントテーブル(親テーブル)
+- アカウント名(string)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### プロファイルテーブル(小テーブル)
+- 趣味(string)
+- 出身地(string)
+- アカウントID(外部キー)
